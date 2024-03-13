@@ -1,6 +1,7 @@
 import 'package:praxis_afterhours/entities/challenge.dart';
 
 class UpcomingHunt {
+  final String id;
   final String title;
   final String date;
   final String location;
@@ -11,6 +12,7 @@ class UpcomingHunt {
   final String trailing;
 
   const UpcomingHunt({
+    required this.id,
     required this.title,
     required this.location,
     required this.date,
@@ -23,11 +25,12 @@ class UpcomingHunt {
 
   @override
   String toString() {
-    return "{$title, $location, $date, $locationInstructions, $coordinates, $geoFenceRadius}";
+    return "{$id, $title, $location, $date, $locationInstructions, $coordinates, $geoFenceRadius}";
   }
 
   factory UpcomingHunt.fromJson(Map<String, dynamic> json) {
     return UpcomingHunt(
+      id: json["_id"],
       title: json["name"],
       location: json["huntLocation"]["locationName"],
       date: json["startDate"],

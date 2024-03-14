@@ -92,7 +92,9 @@ Widget buildEvent(String title, String location, String date, String place) {
           Expanded(
             child: TextButton(
                 onPressed: () {},
+                //TODO: figure out how to deal with this placeholder huntID
                 child: HuntTile(
+                    huntID: "placeholder",
                     title: title,
                     location: location,
                     date: date,

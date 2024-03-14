@@ -3,6 +3,7 @@ import 'package:praxis_afterhours/app_utils/team_options.dart';
 import 'package:praxis_afterhours/constants/colors.dart';
 
 class HuntTile extends StatelessWidget {
+  final String huntID;
   final String title;
   final String date;
   final String location;
@@ -11,6 +12,7 @@ class HuntTile extends StatelessWidget {
 
   const HuntTile({
     super.key,
+    required this.huntID,
     required this.title,
     required this.location,
     required this.date,
@@ -39,23 +41,27 @@ class HuntTile extends StatelessWidget {
           ],
         ),
         tileColor: praxisGrey,
-        onTap: onTapEnabled ? () => teamDialog(context, title) : null);
+        onTap: onTapEnabled ? () => teamDialog(context, title, huntID) : null);
   }
 
-  teamDialog(BuildContext context, String huntTitle) {
+  teamDialog(BuildContext context, String huntTitle, String huntID) {
     showDialog(
         context: context,
         builder: (BuildContext context) {
           return Container(
             alignment: Alignment.center,
             child: AlertDialog(
-                insetPadding: const EdgeInsets.symmetric(vertical: 215),
-                backgroundColor: praxisGrey,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                  side: const BorderSide(color: Colors.black),
-                ),
-                content: TeamOptions(huntTitle: huntTitle)),
+              insetPadding: const EdgeInsets.symmetric(vertical: 215),
+              backgroundColor: praxisGrey,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+                side: const BorderSide(color: Colors.black),
+              ),
+              content: TeamOptions(
+                huntTitle: huntTitle,
+                huntID: huntID,
+              ),
+            ),
           );
         });
   }

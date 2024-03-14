@@ -4,7 +4,12 @@ import 'package:praxis_afterhours/entities/team.dart';
 import 'package:praxis_afterhours/service/teams_service.dart';
 
 class JoinTeamView extends StatefulWidget {
-  const JoinTeamView({super.key});
+  final String huntID;
+
+  const JoinTeamView({
+    super.key,
+    required this.huntID,
+  });
 
   @override
   State<JoinTeamView> createState() => _JoinTeamViewState();
@@ -12,11 +17,13 @@ class JoinTeamView extends StatefulWidget {
 
 class _JoinTeamViewState extends State<JoinTeamView> {
   late Future<List<Team>> futureTeams;
+  late final String huntID;
 
   @override
   void initState() {
     super.initState();
     futureTeams = fetchTeams();
+    huntID = widget.huntID;
   }
 
   @override

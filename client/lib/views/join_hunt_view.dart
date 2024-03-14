@@ -85,6 +85,7 @@ class _JoinHuntViewState extends State<JoinHuntView> {
                       child: TextButton(
                         onPressed: () {},
                         child: HuntTile(
+                          huntID: upcomingHunt.id,
                           title: upcomingHunt.title,
                           location: upcomingHunt.location,
                           date: upcomingHunt.date,

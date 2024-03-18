@@ -36,56 +36,62 @@ class TeamOptions extends StatelessWidget {
           Padding(
             padding: padding,
             child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => JoinTeamView(
-                        huntID: huntID,
-                      ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => JoinTeamView(
+                      huntID: huntID,
                     ),
-                  );
-                },
-                child: const ListTile(
-                  title: Center(
-                      child: Text("Join Team", style: TextStyle(fontSize: 28))),
-                  tileColor: praxisGrey,
-                )),
+                  ),
+                );
+              },
+              child: const ListTile(
+                title: Center(
+                  child: Text("Join Team", style: TextStyle(fontSize: 28)),
+                ),
+                tileColor: praxisGrey,
+              ),
+            ),
           ),
           Padding(
             padding: padding,
             child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CreateTeamView(),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CreateTeamView(
+                      huntID: huntID,
                     ),
-                  );
-                },
-                child: const ListTile(
-                  title: Center(
-                      child:
-                          Text("Create Team", style: TextStyle(fontSize: 28))),
-                  tileColor: praxisGrey,
-                )),
+                  ),
+                );
+              },
+              child: const ListTile(
+                title: Center(
+                  child: Text("Create Team", style: TextStyle(fontSize: 28)),
+                ),
+                tileColor: praxisGrey,
+              ),
+            ),
           ),
           Padding(
             padding: padding,
             child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => HuntAloneView(),
-                      ));
-                },
-                child: const ListTile(
-                  title: Center(
-                      child:
-                          Text("Hunt Alone", style: TextStyle(fontSize: 28))),
-                  tileColor: praxisGrey,
-                )),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HuntAloneView(),
+                  ),
+                );
+              },
+              child: const ListTile(
+                title: Center(
+                    child: Text("Hunt Alone", style: TextStyle(fontSize: 28))),
+                tileColor: praxisGrey,
+              ),
+            ),
           ),
         ],
       ),

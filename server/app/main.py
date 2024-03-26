@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from app.modules.users import router as users
 from app.modules.hunts import router as hunts
-from app.modules.hunts.teams import router as hunts_teams
+from app.modules.ws import router as ws
 from app.modules.teams import router as teams
 from app.exceptions import unhandled_exception_handler, validation_exception_handler
 from fastapi.exceptions import RequestValidationError
@@ -37,13 +37,13 @@ app.include_router(
 )
 
 app.include_router(
-    hunts_teams.router,
-    prefix="/hunts/teams",
-    tags=["Hunts_Teams"]
+    ws.router,
+    prefix="/ws",
+    tags=["WebSockets"]
 )
 
 app.include_router(
-    teams.router,
-    prefix="/teams",
-    tags=["Teams"]
+  teams.router,
+  prefix="/teams",
+  tags=["Teams"] 
 )
